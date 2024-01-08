@@ -208,14 +208,14 @@ if($mybb->input['action'] == "add")
 		$query = $db->simple_select("serversboard", "MAX(disporder) AS max_disporder");
 		$max_disporder = $db->fetch_field($query, "max_disporder");
 		
-		$mybb->input = array(
+		$mybb->input = [
 			"field" => "0",
 			"visible" => "1",
 			"owner" => $mybb->user['username'],
 			"disporder" => $max_disporder + 1,
 			"new" => "0",
 			"cuthostname" => "0",
-		);
+		];
 	}
 	
 	$page->add_breadcrumb_item($lang->server_add);
@@ -804,6 +804,7 @@ if(!$mybb->input['action'])
 					'host' => $server['ip'],
 					'options' => [
 						'master_server_port' => $server['ts3qport'],
+						'query_port' => $server['ts3qport'],
 					],
 				],
 			];	

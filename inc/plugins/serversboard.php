@@ -132,7 +132,7 @@ function serversboard_install()
 			`new_color` varchar(20) NOT NULL DEFAULT '',
 			`new_text` varchar(20) NOT NULL DEFAULT '',
 			`forumid` varchar(20) NOT NULL DEFAULT '',
-			`buddylist` TEXT NOT NULL DEFAULT '',
+			`buddylist` TEXT NULL,
 			`cache` LONGTEXT NOT NULL DEFAULT '',
 			`lastupdate` bigint(30) NOT NULL DEFAULT '0',
 			`recordplayers` int(10) NOT NULL DEFAULT '0',
@@ -1017,6 +1017,7 @@ function serversboard()
 						"host"		=> $server['ip'],
 						"options"	=> [
 							"master_server_port" => $server['ts3qport'],
+							"query_port" => $server['ts3qport']
 						],
 					],
 				];	
@@ -1581,6 +1582,7 @@ function serversboard_subpage()
 							"host" => $server['ip'],
 							"options" => [
 								"master_server_port" => $server['ts3qport'],
+								"query_port" => $server['ts3qport'],
 							],
 						],
 					];	
