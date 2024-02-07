@@ -133,7 +133,7 @@ function serversboard_install()
 			`new_text` varchar(20) NOT NULL DEFAULT '',
 			`forumid` varchar(20) NOT NULL DEFAULT '',
 			`buddylist` TEXT NULL,
-			`cache` LONGTEXT NOT NULL DEFAULT '',
+			`cache` LONGTEXT NULL,
 			`lastupdate` bigint(30) NOT NULL DEFAULT '0',
 			`recordplayers` int(10) NOT NULL DEFAULT '0',
 			`owner` varchar(100) NOT NULL DEFAULT '',
