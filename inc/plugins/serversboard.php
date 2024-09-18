@@ -29,7 +29,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
 ********************************************************************************************************************************/
- 
+
 if(!defined("IN_MYBB"))
 {
 	die("Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.");
@@ -41,7 +41,7 @@ define("PLUGIN_WEBSITE", "");
 define("PLUGIN_AUTHOR", "Krzysztof \"Supryk\" Supryczyński, Tomasz Leszczyński");
 define("PLUGIN_AUTHORNAME", "Supryk & l3szcz");
 define("PLUGIN_AUTHORSITE", "");
-define("PLUGIN_VERSION", "3.6");
+define("PLUGIN_VERSION", "3.6.1");
 define("COMPATIBILITY", "18*");
 define("CODENAME", "servers_board");
 
@@ -90,14 +90,13 @@ function serversboard_install()
 {
 	global $db, $lang, $mybb;
 	$lang->load("config_serversboard");
-	
 	if(!file_exists(MYBB_ROOT."serversboard.php")) 
 	{
 		flash_message($lang->serversboard_upload_all_files, 'error');
 		admin_redirect("index.php?module=config-plugins");
 	}
-
-	if(!file_exists(SERVERSBOARD_CORE_PATH."gameq.php")) 
+	
+	if(!file_exists(SERVERSBOARD_CORE_PATH."GameQ.php")) 
 	{
 		flash_message($lang->serversboard_upload_all_files, 'error');
 		admin_redirect("index.php?module=config-plugins");
